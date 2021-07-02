@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import myName from './myName';
+import './style.css';
 import { functionOne, functionTwo } from './myModule';
 
 function component(string = 'Jeff') {
@@ -8,6 +9,7 @@ function component(string = 'Jeff') {
 	// following code uses Lodash
 	// Now imported from the node_modules folder
 	element.innerHTML = myName(string);
+	element.classList.add('hello');
 
 	return element;
 }
