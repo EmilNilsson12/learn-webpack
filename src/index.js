@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import myName from './myName';
 import './style.css';
+import Icon from './icon.png';
 import { functionOne, functionTwo } from './myModule';
 
 function component(string = 'Jeff') {
@@ -11,11 +12,13 @@ function component(string = 'Jeff') {
 	element.innerHTML = myName(string);
 	element.classList.add('hello');
 
+	// Add the image to our existing div.
+
+	const myIcon = new Image();
+	myIcon.src = Icon;
+	element.appendChild(myIcon);
+
 	return element;
 }
 
 document.body.appendChild(component());
-document.body.appendChild(component());
-document.body.appendChild(component(functionOne()));
-document.body.appendChild(component('Overwriting "Jeff"'));
-document.body.appendChild(component(functionTwo()));
